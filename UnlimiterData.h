@@ -38,10 +38,12 @@ void LoadCarConfigs()
 	DefaultCarConfig.Category.Parts = mINI_ReadInteger(GeneralINI, "Main", "Parts", 1) != 0;
 	DefaultCarConfig.Category.Performance = mINI_ReadInteger(GeneralINI, "Main", "Performance", 1) != 0;
 	DefaultCarConfig.Category.Visual = mINI_ReadInteger(GeneralINI, "Main", "Visual", 1) != 0;
+	DefaultCarConfig.Category.Extra = mINI_ReadInteger(GeneralINI, "Main", "Extra", 1) != 0;
 
 	DefaultCarConfig.Category.Parts = mINI_ReadInteger(GeneralINI, "Category", "Parts", DefaultCarConfig.Category.Parts) != 0;
 	DefaultCarConfig.Category.Performance = mINI_ReadInteger(GeneralINI, "Category", "Performance", DefaultCarConfig.Category.Performance) != 0;
 	DefaultCarConfig.Category.Visual = mINI_ReadInteger(GeneralINI, "Category", "Visual", DefaultCarConfig.Category.Visual) != 0;
+	DefaultCarConfig.Category.Extra = mINI_ReadInteger(GeneralINI, "Category", "Extra", DefaultCarConfig.Category.Extra) != 0;
 
 	// Textures
 	DefaultCarConfig.Textures.HeadlightOff = mINI_ReadInteger(GeneralINI, "Textures", "HeadlightOff", 0) != 0;
@@ -53,6 +55,18 @@ void LoadCarConfigs()
 
 	// Parts
 	DefaultCarConfig.Parts.BodyKits = mINI_ReadInteger(GeneralINI, "Parts", "BodyKits", 1) != 0;
+	DefaultCarConfig.Parts.FrontFender = mINI_ReadInteger(GeneralINI, "Parts", "FrontFender", 1) != 0;
+	DefaultCarConfig.Parts.RearFender = mINI_ReadInteger(GeneralINI, "Parts", "RearFender", 1) != 0;
+	DefaultCarConfig.Parts.FrontBumper = mINI_ReadInteger(GeneralINI, "Parts", "FrontBumper", 1) != 0;
+	DefaultCarConfig.Parts.RearBumper = mINI_ReadInteger(GeneralINI, "Parts", "RearBumper", 1) != 0;
+	DefaultCarConfig.Parts.SideSkirts = mINI_ReadInteger(GeneralINI, "Parts", "SideSkirts", 1) != 0;
+	DefaultCarConfig.Parts.Trunk = mINI_ReadInteger(GeneralINI, "Parts", "Trunk", 1) != 0;
+	DefaultCarConfig.Parts.Splitter = mINI_ReadInteger(GeneralINI, "Parts", "Splitter", 1) != 0;
+	DefaultCarConfig.Parts.Diffuser = mINI_ReadInteger(GeneralINI, "Parts", "Diffuser", 1) != 0;
+	DefaultCarConfig.Parts.FrontCanard = mINI_ReadInteger(GeneralINI, "Parts", "FrontCanard", 1) != 0;
+	DefaultCarConfig.Parts.RearCanard = mINI_ReadInteger(GeneralINI, "Parts", "RearCanard", 1) != 0;
+	DefaultCarConfig.Parts.Exhaust = mINI_ReadInteger(GeneralINI, "Parts", "Exhaust", 1) != 0;
+	DefaultCarConfig.Parts.RollCage = mINI_ReadInteger(GeneralINI, "Parts", "RollCage", 1) != 0;
 	DefaultCarConfig.Parts.Spoilers = mINI_ReadInteger(GeneralINI, "Parts", "Spoilers", 1) != 0;
 	DefaultCarConfig.Parts.Rims = mINI_ReadInteger(GeneralINI, "Parts", "Rims", 1) != 0;
 	DefaultCarConfig.Parts.RimsCustom = mINI_ReadInteger(GeneralINI, "Parts", "RimsCustom", 0) != 0;
@@ -99,6 +113,18 @@ void LoadCarConfigs()
 	// Icons
 	DefaultCarConfig.Icons.Parts = mINI_ReadHashS(GeneralINI, "Icons", "Parts", "BROWSER_PARTS");
 	DefaultCarConfig.Icons.PartsBodyKits = mINI_ReadHashS(GeneralINI, "Icons", "PartsBodyKits", "VISUAL_PART_BODY");
+	DefaultCarConfig.Icons.PartsFrontFender = mINI_ReadHashS(GeneralINI, "Icons", "PartsFrontFender", "VISUAL_PART_FFENDER");
+	DefaultCarConfig.Icons.PartsRearFender = mINI_ReadHashS(GeneralINI, "Icons", "PartsRearFender", "VISUAL_PART_RFENDER");
+	DefaultCarConfig.Icons.PartsFrontBumper = mINI_ReadHashS(GeneralINI, "Icons", "PartsFrontBumper", "VISUAL_PART_FRONT_BUMPER");
+	DefaultCarConfig.Icons.PartsRearBumper = mINI_ReadHashS(GeneralINI, "Icons", "PartsRearBumper", "VISUAL_PART_REAR_BUMPER");
+	DefaultCarConfig.Icons.PartsSideSkirts = mINI_ReadHashS(GeneralINI, "Icons", "PartsSideSkirts", "VISUAL_PART_SIDE_SKIRTS");
+	DefaultCarConfig.Icons.PartsTrunk = mINI_ReadHashS(GeneralINI, "Icons", "PartsTrunk", "VISUAL_PART_TRUNK");
+	DefaultCarConfig.Icons.PartsSplitter = mINI_ReadHashS(GeneralINI, "Icons", "PartsSplitter", "VISUAL_PART_SPLITTER");
+	DefaultCarConfig.Icons.PartsDiffuser = mINI_ReadHashS(GeneralINI, "Icons", "PartsDiffuser", "VISUAL_PART_DIFFUSER");
+	DefaultCarConfig.Icons.PartsFrontCanard = mINI_ReadHashS(GeneralINI, "Icons", "PartsFrontCanard", "VISUAL_PART_FRONT_CANARD");
+	DefaultCarConfig.Icons.PartsRearCanard = mINI_ReadHashS(GeneralINI, "Icons", "PartsRearCanard", "VISUAL_PART_REAR_CANARD");
+	DefaultCarConfig.Icons.PartsExhaust = mINI_ReadHashS(GeneralINI, "Icons", "PartsExhaust", "VISUAL_PART_EXHAUST");
+	DefaultCarConfig.Icons.PartsRollCage = mINI_ReadHashS(GeneralINI, "Icons", "PartsRollCage", "VISUAL_PART_ROLLCAGE");
 	DefaultCarConfig.Icons.PartsSpoilers = mINI_ReadHashS(GeneralINI, "Icons", "PartsSpoilers", "VISUAL_PART_SPOILER");
 	DefaultCarConfig.Icons.PartsSpoilersCF = mINI_ReadHashS(GeneralINI, "Icons", "PartsSpoilersCF", "VISUAL_PART_SPOILER_CARBON");
 	DefaultCarConfig.Icons.PartsRims = mINI_ReadHashS(GeneralINI, "Icons", "PartsRims", "VISUAL_PART_RIMS");
@@ -198,6 +224,8 @@ void LoadCarConfigs()
 	DefaultCarConfig.Icons.VisualNeon = mINI_ReadHashS(GeneralINI, "Icons", "VisualNeon", "VISUAL_PART_NEON");
 	DefaultCarConfig.Icons.BackroomParts = mINI_ReadHashS(GeneralINI, "Icons", "BackroomParts", "MARKER_ICON_PARTS");
 	DefaultCarConfig.Icons.BackroomPartsBodyKits = mINI_ReadHashS(GeneralINI, "Icons", "BackroomPartsBodyKits", "MARKER_ICON_PARTS_BODYKITS");
+	DefaultCarConfig.Icons.BackroomPartsFrontFender = mINI_ReadHashS(GeneralINI, "Icons", "BackroomPartsFrontFender", "MARKER_ICON_PARTS_FFENDER");
+	DefaultCarConfig.Icons.BackroomPartsRearFender = mINI_ReadHashS(GeneralINI, "Icons", "BackroomPartsRearFender", "MARKER_ICON_PARTS_RFENDER");
 	DefaultCarConfig.Icons.BackroomPartsSpoilers = mINI_ReadHashS(GeneralINI, "Icons", "BackroomPartsSpoilers", "MARKER_ICON_PARTS_SPOILERS");
 	DefaultCarConfig.Icons.BackroomPartsSpoilersCF = mINI_ReadHashS(GeneralINI, "Icons", "BackroomPartsSpoilersCF", "MARKER_ICON_PARTS_CF_SPOILERS");
 	DefaultCarConfig.Icons.BackroomPartsRims = mINI_ReadHashS(GeneralINI, "Icons", "BackroomPartsRims", "MARKER_ICON_PARTS_RIMS");
@@ -379,6 +407,18 @@ void LoadCarConfigs()
 	// Names
 	DefaultCarConfig.Names.Parts = mINI_ReadHashS(GeneralINI, "Names", "Parts", "CO_PARTS");
 	DefaultCarConfig.Names.PartsBodyKits = mINI_ReadHashS(GeneralINI, "Names", "PartsBodyKits", "CO_BODY_KITS");
+	DefaultCarConfig.Names.PartsFrontFender = mINI_ReadHashS(GeneralINI, "Names", "PartsFrontFender", "CO_FFENDER");
+	DefaultCarConfig.Names.PartsRearFender = mINI_ReadHashS(GeneralINI, "Names", "PartsRearFender", "CO_RFENDER");
+	DefaultCarConfig.Names.PartsFrontBumper = mINI_ReadHashS(GeneralINI, "Names", "PartsFrontBumper", "CO_FRONT_BUMPER");
+	DefaultCarConfig.Names.PartsRearBumper = mINI_ReadHashS(GeneralINI, "Names", "PartsRearBumper", "CO_REAR_BUMPER");
+	DefaultCarConfig.Names.PartsSideSkirts = mINI_ReadHashS(GeneralINI, "Names", "PartsSideSkirts", "CO_SIDE_SKIRTS");
+	DefaultCarConfig.Names.PartsTrunk = mINI_ReadHashS(GeneralINI, "Names", "PartsTrunk", "CO_TRUNK");
+	DefaultCarConfig.Names.PartsSplitter = mINI_ReadHashS(GeneralINI, "Names", "PartsSplitter", "CO_SPLITTER");
+	DefaultCarConfig.Names.PartsDiffuser = mINI_ReadHashS(GeneralINI, "Names", "PartsDiffuser", "CO_DIFFUSER");
+	DefaultCarConfig.Names.PartsFrontCanard = mINI_ReadHashS(GeneralINI, "Names", "PartsFrontCanard", "CO_FRONT_CANARD");
+	DefaultCarConfig.Names.PartsRearCanard = mINI_ReadHashS(GeneralINI, "Names", "PartsRearCanard", "CO_REAR_CANARD");
+	DefaultCarConfig.Names.PartsExhaust = mINI_ReadHashS(GeneralINI, "Names", "PartsExhaust", "CO_EXHAUST");
+	DefaultCarConfig.Names.PartsRollCage = mINI_ReadHashS(GeneralINI, "Names", "PartsRollCage", "CO_ROLLCAGE");
 	DefaultCarConfig.Names.PartsSpoilers = mINI_ReadHashS(GeneralINI, "Names", "PartsSpoilers", "CO_SPOILERS");
 	DefaultCarConfig.Names.PartsRims = mINI_ReadHashS(GeneralINI, "Names", "PartsRims", "CO_RIMS");
 	DefaultCarConfig.Names.PartsRimsBrand = mINI_ReadHashS(GeneralINI, "Names", "PartsRimsBrand", "CO_RIM_BRAND");
@@ -641,6 +681,18 @@ void LoadCarConfigs()
 
 	// Cameras
 	DefaultCarConfig.Cameras.PartsBodyKits = mINI_ReadVLTHash(GeneralINI, "Cameras", "PartsBodyKits");
+	DefaultCarConfig.Cameras.PartsFrontFender = mINI_ReadVLTHash(GeneralINI, "Cameras", "PartsFrontFender");
+	DefaultCarConfig.Cameras.PartsRearFender = mINI_ReadVLTHash(GeneralINI, "Cameras", "PartsRearFender");
+	DefaultCarConfig.Cameras.PartsFrontBumper = mINI_ReadVLTHash(GeneralINI, "Cameras", "PartsFrontBumper");
+	DefaultCarConfig.Cameras.PartsRearBumper = mINI_ReadVLTHash(GeneralINI, "Cameras", "PartsRearBumper");
+	DefaultCarConfig.Cameras.PartsSideSkirts = mINI_ReadVLTHash(GeneralINI, "Cameras", "PartsSideSkirts");
+	DefaultCarConfig.Cameras.PartsTrunk = mINI_ReadVLTHash(GeneralINI, "Cameras", "PartsTrunk");
+	DefaultCarConfig.Cameras.PartsSplitter = mINI_ReadVLTHash(GeneralINI, "Cameras", "PartsSplitter");
+	DefaultCarConfig.Cameras.PartsDiffuser = mINI_ReadVLTHash(GeneralINI, "Cameras", "PartsDiffuser");
+	DefaultCarConfig.Cameras.PartsFrontCanard = mINI_ReadVLTHash(GeneralINI, "Cameras", "PartsFrontCanard");
+	DefaultCarConfig.Cameras.PartsRearCanard = mINI_ReadVLTHash(GeneralINI, "Cameras", "PartsRearCanard");
+	DefaultCarConfig.Cameras.PartsExhaust = mINI_ReadVLTHash(GeneralINI, "Cameras", "PartsExhaust");
+	DefaultCarConfig.Cameras.PartsRollCage = mINI_ReadVLTHash(GeneralINI, "Cameras", "PartsRollCage");
 	DefaultCarConfig.Cameras.PartsSpoilers = mINI_ReadVLTHash(GeneralINI, "Cameras", "PartsSpoilers");
 	DefaultCarConfig.Cameras.PartsRims = mINI_ReadVLTHash(GeneralINI, "Cameras", "PartsRims");
 	DefaultCarConfig.Cameras.PartsRimsBrand = mINI_ReadVLTHash(GeneralINI, "Cameras", "PartsRimsBrand");
@@ -733,6 +785,18 @@ void LoadCarConfigs()
 	for (int p = 0; p < NumCarSlots; p++) DefaultCarConfig.StockParts.Parts[p] = -1;
 
 	DefaultCarConfig.StockParts.Parts[23] = mINI_ReadHash(GeneralINI, "StockParts", "BodyKits"); // BODY
+	DefaultCarConfig.StockParts.Parts[8] = mINI_ReadHash(GeneralINI, "StockParts", "FrontFender"); // FRONT_FENDER
+	DefaultCarConfig.StockParts.Parts[7] = mINI_ReadHash(GeneralINI, "StockParts", "RearFender"); // REAR_FENDER
+	DefaultCarConfig.StockParts.Parts[12] = mINI_ReadHash(GeneralINI, "StockParts", "FrontBumper"); // FRONT_BUMPER
+	DefaultCarConfig.StockParts.Parts[16] = mINI_ReadHash(GeneralINI, "StockParts", "RearBumper"); // REAR_BUMPER
+	DefaultCarConfig.StockParts.Parts[11] = mINI_ReadHash(GeneralINI, "StockParts", "SideSkirts"); // SIDE_SKIRTS
+	DefaultCarConfig.StockParts.Parts[15] = mINI_ReadHash(GeneralINI, "StockParts", "Trunk"); // TRUNK
+	DefaultCarConfig.StockParts.Parts[2] = mINI_ReadHash(GeneralINI, "StockParts", "Splitter"); // SPLITTER
+	DefaultCarConfig.StockParts.Parts[4] = mINI_ReadHash(GeneralINI, "StockParts", "Diffuser"); // DIFFUSER
+	DefaultCarConfig.StockParts.Parts[21] = mINI_ReadHash(GeneralINI, "StockParts", "FrontCanard"); // FRONT_CANARD
+	DefaultCarConfig.StockParts.Parts[22] = mINI_ReadHash(GeneralINI, "StockParts", "RearCanard"); // REAR_CANARD
+	DefaultCarConfig.StockParts.Parts[13] = mINI_ReadHash(GeneralINI, "StockParts", "Exhaust"); // EXHAUST
+	DefaultCarConfig.StockParts.Parts[14] = mINI_ReadHash(GeneralINI, "StockParts", "RollCage"); // ROLLCAGE
 	DefaultCarConfig.StockParts.Parts[44] = mINI_ReadHash(GeneralINI, "StockParts", "Spoilers"); // SPOILER
 	DefaultCarConfig.StockParts.Parts[66] = mINI_ReadHash(GeneralINI, "StockParts", "RimsFront"); // FRONT_WHEEL
 	DefaultCarConfig.StockParts.Parts[67] = mINI_ReadHash(GeneralINI, "StockParts", "RimsRear"); // REAR_WHEEL
@@ -826,6 +890,18 @@ void LoadCarConfigs()
 	for (int p = 0; p < NumCarSlots; p++) DefaultCarConfig.RandomParts.Parts[p] = 0;
 
 	DefaultCarConfig.RandomParts.Parts[23] = mINI_ReadInteger(GeneralINI, "RandomParts", "BodyKits", 0) != 0; // BODY
+	DefaultCarConfig.RandomParts.Parts[8] = mINI_ReadInteger(GeneralINI, "RandomParts", "FrontFender", 0) != 0; // FRONT_FENDER
+	DefaultCarConfig.RandomParts.Parts[7] = mINI_ReadInteger(GeneralINI, "RandomParts", "RearFender", 0) != 0; // REAR_FENDER
+	DefaultCarConfig.RandomParts.Parts[12] = mINI_ReadInteger(GeneralINI, "RandomParts", "FrontBumper", 0) != 0; // FRONT_BUMPER
+	DefaultCarConfig.RandomParts.Parts[16] = mINI_ReadInteger(GeneralINI, "RandomParts", "RearBumper", 0) != 0; // REAR_BUMPER
+	DefaultCarConfig.RandomParts.Parts[11] = mINI_ReadInteger(GeneralINI, "RandomParts", "SideSkirts", 0) != 0; // SIDE_SKIRTS
+	DefaultCarConfig.RandomParts.Parts[15] = mINI_ReadInteger(GeneralINI, "RandomParts", "Trunk", 0) != 0; // TRUNK
+	DefaultCarConfig.RandomParts.Parts[2] = mINI_ReadInteger(GeneralINI, "StockParts", "Splitter", 0) != 0; // SPLITTER
+	DefaultCarConfig.RandomParts.Parts[4] = mINI_ReadInteger(GeneralINI, "StockParts", "Diffuser", 0) != 0; // DIFFUSER
+	DefaultCarConfig.RandomParts.Parts[21] = mINI_ReadInteger(GeneralINI, "StockParts", "FrontCanard", 0) != 0; // FRONT_CANARD
+	DefaultCarConfig.RandomParts.Parts[22] = mINI_ReadInteger(GeneralINI, "StockParts", "RearCanard", 0) != 0; // REAR_CANARD
+	DefaultCarConfig.RandomParts.Parts[13] = mINI_ReadInteger(GeneralINI, "StockParts", "Exhaust", 0) != 0; // EXHAUST
+	DefaultCarConfig.RandomParts.Parts[14] = mINI_ReadInteger(GeneralINI, "StockParts", "RollCage", 0) != 0; // ROLLCAGE
 	DefaultCarConfig.RandomParts.Parts[44] = mINI_ReadInteger(GeneralINI, "RandomParts", "Spoilers", 0) != 0; // SPOILER
 	DefaultCarConfig.RandomParts.Parts[66] = mINI_ReadInteger(GeneralINI, "RandomParts", "RimsFront", 0) != 0; // FRONT_WHEEL
 	DefaultCarConfig.RandomParts.Parts[67] = mINI_ReadInteger(GeneralINI, "RandomParts", "RimsRear", 0) != 0; // REAR_WHEEL
@@ -914,6 +990,18 @@ void LoadCarConfigs()
 
 	// FECooling
 	DefaultCarConfig.FECooling.BodyKits = mINI_ReadFloat(GeneralINI, "FECooling", "BodyKits", 0.0f);
+	DefaultCarConfig.FECooling.FrontFender = mINI_ReadFloat(GeneralINI, "FECooling", "FrontFender", 0.95f);
+	DefaultCarConfig.FECooling.RearFender = mINI_ReadFloat(GeneralINI, "FECooling", "RearFender", 0.95f);
+	DefaultCarConfig.FECooling.FrontBumper = mINI_ReadFloat(GeneralINI, "FECooling", "FrontBumper", 0.95f);
+	DefaultCarConfig.FECooling.RearBumper = mINI_ReadFloat(GeneralINI, "FECooling", "RearBumper", 0.95f);
+	DefaultCarConfig.FECooling.SideSkirts = mINI_ReadFloat(GeneralINI, "FECooling", "SideSkirts", 0.95f);
+	DefaultCarConfig.FECooling.Trunk = mINI_ReadFloat(GeneralINI, "FECooling", "Trunk", 0.95f);
+	DefaultCarConfig.FECooling.Splitter = mINI_ReadFloat(GeneralINI, "FECooling", "Splitter", 0.95f);
+	DefaultCarConfig.FECooling.Diffuser = mINI_ReadFloat(GeneralINI, "FECooling", "Diffuser", 0.95f);
+	DefaultCarConfig.FECooling.FrontCanard = mINI_ReadFloat(GeneralINI, "FECooling", "FrontCanard", 0.95f);
+	DefaultCarConfig.FECooling.RearCanard = mINI_ReadFloat(GeneralINI, "FECooling", "RearCanard", 0.95f);
+	DefaultCarConfig.FECooling.Exhaust = mINI_ReadFloat(GeneralINI, "FECooling", "Exhaust", 0.95f);
+	DefaultCarConfig.FECooling.RollCage = mINI_ReadFloat(GeneralINI, "FECooling", "RollCage", 0.95f);
 	DefaultCarConfig.FECooling.Spoilers = mINI_ReadFloat(GeneralINI, "FECooling", "Spoilers", 0.0f);
 	DefaultCarConfig.FECooling.Rims = mINI_ReadFloat(GeneralINI, "FECooling", "Rims", 0.0f);
 	DefaultCarConfig.FECooling.Hoods = mINI_ReadFloat(GeneralINI, "FECooling", "Hoods", 0.0f);
@@ -981,6 +1069,18 @@ void LoadCarConfigs()
 
 		// Parts
 		ACarConfig.Parts.BodyKits = mINI_ReadInteger(CarINI, "Parts", "BodyKits", DefaultCarConfig.Parts.BodyKits) != 0;
+		ACarConfig.Parts.FrontFender = mINI_ReadInteger(CarINI, "Parts", "FrontFender", DefaultCarConfig.Parts.FrontFender) != 0;
+		ACarConfig.Parts.RearFender = mINI_ReadInteger(CarINI, "Parts", "RearFender", DefaultCarConfig.Parts.RearFender) != 0;
+		ACarConfig.Parts.FrontBumper = mINI_ReadInteger(CarINI, "Parts", "FrontBumper", DefaultCarConfig.Parts.FrontBumper) != 0;
+		ACarConfig.Parts.RearBumper = mINI_ReadInteger(CarINI, "Parts", "RearBumper", DefaultCarConfig.Parts.RearBumper) != 0;
+		ACarConfig.Parts.SideSkirts = mINI_ReadInteger(CarINI, "Parts", "SideSkirts", DefaultCarConfig.Parts.SideSkirts) != 0;
+		ACarConfig.Parts.Trunk = mINI_ReadInteger(CarINI, "Parts", "Trunk", DefaultCarConfig.Parts.Trunk) != 0;
+		ACarConfig.Parts.Splitter = mINI_ReadInteger(CarINI, "Parts", "Splitter", DefaultCarConfig.Parts.Splitter) != 0;
+		ACarConfig.Parts.Diffuser = mINI_ReadInteger(CarINI, "Parts", "Diffuser", DefaultCarConfig.Parts.Diffuser) != 0;
+		ACarConfig.Parts.FrontCanard = mINI_ReadInteger(CarINI, "Parts", "FrontCanard", DefaultCarConfig.Parts.FrontCanard) != 0;
+		ACarConfig.Parts.RearCanard = mINI_ReadInteger(CarINI, "Parts", "RearCanard", DefaultCarConfig.Parts.RearCanard) != 0;
+		ACarConfig.Parts.Exhaust = mINI_ReadInteger(CarINI, "Parts", "Exhaust", DefaultCarConfig.Parts.Exhaust) != 0;
+		ACarConfig.Parts.RollCage = mINI_ReadInteger(CarINI, "Parts", "RollCage", DefaultCarConfig.Parts.RollCage) != 0;
 		ACarConfig.Parts.Spoilers = mINI_ReadInteger(CarINI, "Parts", "Spoilers", DefaultCarConfig.Parts.Spoilers) != 0;
 		ACarConfig.Parts.Rims = mINI_ReadInteger(CarINI, "Parts", "Rims", DefaultCarConfig.Parts.Rims) != 0;
 		ACarConfig.Parts.RimsCustom = mINI_ReadInteger(CarINI, "Parts", "RimsCustom", DefaultCarConfig.Parts.RimsCustom) != 0;
@@ -1027,6 +1127,18 @@ void LoadCarConfigs()
 		// Icons
 		ACarConfig.Icons.Parts = mINI_ReadHash(CarINI, "Icons", "Parts", DefaultCarConfig.Icons.Parts);
 		ACarConfig.Icons.PartsBodyKits = mINI_ReadHash(CarINI, "Icons", "PartsBodykits", DefaultCarConfig.Icons.PartsBodyKits);
+		ACarConfig.Icons.PartsFrontFender = mINI_ReadHash(CarINI, "Icons", "PartsFrontFender", DefaultCarConfig.Icons.PartsFrontFender);
+		ACarConfig.Icons.PartsRearFender = mINI_ReadHash(CarINI, "Icons", "PartsRearFender", DefaultCarConfig.Icons.PartsRearFender);
+		ACarConfig.Icons.PartsFrontBumper = mINI_ReadHash(CarINI, "Icons", "PartsFrontBumper", DefaultCarConfig.Icons.PartsFrontBumper);
+		ACarConfig.Icons.PartsRearBumper = mINI_ReadHash(CarINI, "Icons", "PartsRearBumper", DefaultCarConfig.Icons.PartsRearBumper);
+		ACarConfig.Icons.PartsSideSkirts = mINI_ReadHash(CarINI, "Icons", "PartsSideSkirts", DefaultCarConfig.Icons.PartsSideSkirts);
+		ACarConfig.Icons.PartsTrunk = mINI_ReadHash(CarINI, "Icons", "PartsTrunk", DefaultCarConfig.Icons.PartsTrunk);
+		ACarConfig.Icons.PartsSplitter = mINI_ReadHash(CarINI, "Icons", "PartsSplitter", DefaultCarConfig.Icons.PartsSplitter);
+		ACarConfig.Icons.PartsDiffuser = mINI_ReadHash(CarINI, "Icons", "PartsDiffuser", DefaultCarConfig.Icons.PartsDiffuser);
+		ACarConfig.Icons.PartsFrontCanard = mINI_ReadHash(CarINI, "Icons", "PartsFrontCanard", DefaultCarConfig.Icons.PartsFrontCanard);
+		ACarConfig.Icons.PartsRearCanard = mINI_ReadHash(CarINI, "Icons", "PartsRearCanard", DefaultCarConfig.Icons.PartsRearCanard);
+		ACarConfig.Icons.PartsExhaust = mINI_ReadHash(CarINI, "Icons", "PartsExhaust", DefaultCarConfig.Icons.PartsExhaust);
+		ACarConfig.Icons.PartsRollCage = mINI_ReadHash(CarINI, "Icons", "PartsRollCage", DefaultCarConfig.Icons.PartsRollCage);
 		ACarConfig.Icons.PartsSpoilers = mINI_ReadHash(CarINI, "Icons", "PartsSpoilers", DefaultCarConfig.Icons.PartsSpoilers);
 		ACarConfig.Icons.PartsSpoilersCF = mINI_ReadHash(CarINI, "Icons", "PartsSpoilersCF", DefaultCarConfig.Icons.PartsSpoilersCF);
 		ACarConfig.Icons.PartsRims = mINI_ReadHash(CarINI, "Icons", "PartsRims", DefaultCarConfig.Icons.PartsRims);
@@ -1126,6 +1238,8 @@ void LoadCarConfigs()
 		ACarConfig.Icons.VisualNeon = mINI_ReadHash(CarINI, "Icons", "VisualNeon", DefaultCarConfig.Icons.VisualNeon);
 		ACarConfig.Icons.BackroomParts = mINI_ReadHash(CarINI, "Icons", "BackroomParts", DefaultCarConfig.Icons.BackroomParts);
 		ACarConfig.Icons.BackroomPartsBodyKits = mINI_ReadHash(CarINI, "Icons", "BackroomPartsBodyKits", DefaultCarConfig.Icons.BackroomPartsBodyKits);
+		ACarConfig.Icons.BackroomPartsFrontFender = mINI_ReadHash(CarINI, "Icons", "BackroomPartsFrontFender", DefaultCarConfig.Icons.BackroomPartsFrontFender);
+		ACarConfig.Icons.BackroomPartsRearFender = mINI_ReadHash(CarINI, "Icons", "BackroomPartsRearFender", DefaultCarConfig.Icons.BackroomPartsRearFender);
 		ACarConfig.Icons.BackroomPartsSpoilers = mINI_ReadHash(CarINI, "Icons", "BackroomPartsSpoilers", DefaultCarConfig.Icons.BackroomPartsSpoilers);
 		ACarConfig.Icons.BackroomPartsSpoilersCF = mINI_ReadHash(CarINI, "Icons", "BackroomPartsSpoilersCF", DefaultCarConfig.Icons.BackroomPartsSpoilersCF);
 		ACarConfig.Icons.BackroomPartsRims = mINI_ReadHash(CarINI, "Icons", "BackroomPartsRims", DefaultCarConfig.Icons.BackroomPartsRims);
@@ -1307,6 +1421,18 @@ void LoadCarConfigs()
 		// Names
 		ACarConfig.Names.Parts = mINI_ReadHash(CarINI, "Names", "Parts", DefaultCarConfig.Names.Parts);
 		ACarConfig.Names.PartsBodyKits = mINI_ReadHash(CarINI, "Names", "PartsBodykits", DefaultCarConfig.Names.PartsBodyKits);
+		ACarConfig.Names.PartsFrontFender = mINI_ReadHash(CarINI, "Names", "PartsFrontFender", DefaultCarConfig.Names.PartsFrontFender);
+		ACarConfig.Names.PartsRearFender = mINI_ReadHash(CarINI, "Names", "PartsRearFender", DefaultCarConfig.Names.PartsRearFender);
+		ACarConfig.Names.PartsFrontBumper = mINI_ReadHash(CarINI, "Names", "PartsFrontBumper", DefaultCarConfig.Names.PartsFrontBumper);
+		ACarConfig.Names.PartsRearBumper = mINI_ReadHash(CarINI, "Names", "PartsRearBumper", DefaultCarConfig.Names.PartsRearBumper);
+		ACarConfig.Names.PartsSideSkirts = mINI_ReadHash(CarINI, "Names", "PartsSideSkirts", DefaultCarConfig.Names.PartsSideSkirts);
+		ACarConfig.Names.PartsTrunk = mINI_ReadHash(CarINI, "Names", "PartsTrunk", DefaultCarConfig.Names.PartsTrunk);
+		ACarConfig.Names.PartsSplitter = mINI_ReadHash(CarINI, "Names", "PartsSplitter", DefaultCarConfig.Names.PartsSplitter);
+		ACarConfig.Names.PartsDiffuser = mINI_ReadHash(CarINI, "Names", "PartsDiffuser", DefaultCarConfig.Names.PartsDiffuser);
+		ACarConfig.Names.PartsFrontCanard = mINI_ReadHash(CarINI, "Names", "PartsFrontCanard", DefaultCarConfig.Names.PartsFrontCanard);
+		ACarConfig.Names.PartsRearCanard = mINI_ReadHash(CarINI, "Names", "PartsRearCanard", DefaultCarConfig.Names.PartsRearCanard);
+		ACarConfig.Names.PartsExhaust = mINI_ReadHash(CarINI, "Names", "PartsExhaust", DefaultCarConfig.Names.PartsExhaust);
+		ACarConfig.Names.PartsRollCage = mINI_ReadHash(CarINI, "Names", "PartsRollCage", DefaultCarConfig.Names.PartsRollCage);
 		ACarConfig.Names.PartsSpoilers = mINI_ReadHash(CarINI, "Names", "PartsSpoilers", DefaultCarConfig.Names.PartsSpoilers);
 		ACarConfig.Names.PartsRims = mINI_ReadHash(CarINI, "Names", "PartsRims", DefaultCarConfig.Names.PartsRims);
 		ACarConfig.Names.PartsRimsBrand = mINI_ReadHash(CarINI, "Names", "PartsRimsBrand", DefaultCarConfig.Names.PartsRimsBrand);
@@ -1542,6 +1668,18 @@ void LoadCarConfigs()
 
 		// Cameras
 		ACarConfig.Cameras.PartsBodyKits = mINI_ReadVLTHash(CarINI, "Cameras", "PartsBodyKits", DefaultCarConfig.Cameras.PartsBodyKits);
+		ACarConfig.Cameras.PartsFrontFender = mINI_ReadVLTHash(CarINI, "Cameras", "PartsFrontFender", DefaultCarConfig.Cameras.PartsFrontFender);
+		ACarConfig.Cameras.PartsRearFender = mINI_ReadVLTHash(CarINI, "Cameras", "PartsRearFender", DefaultCarConfig.Cameras.PartsRearFender);
+		ACarConfig.Cameras.PartsFrontBumper = mINI_ReadVLTHash(CarINI, "Cameras", "PartsFrontBumper", DefaultCarConfig.Cameras.PartsFrontBumper);
+		ACarConfig.Cameras.PartsRearBumper = mINI_ReadVLTHash(CarINI, "Cameras", "PartsRearBumper", DefaultCarConfig.Cameras.PartsRearBumper);
+		ACarConfig.Cameras.PartsSideSkirts = mINI_ReadVLTHash(CarINI, "Cameras", "PartsSideSkirts", DefaultCarConfig.Cameras.PartsSideSkirts);
+		ACarConfig.Cameras.PartsTrunk = mINI_ReadVLTHash(CarINI, "Cameras", "PartsTrunk", DefaultCarConfig.Cameras.PartsTrunk);
+		ACarConfig.Cameras.PartsSplitter = mINI_ReadVLTHash(CarINI, "Cameras", "PartsSplitter", DefaultCarConfig.Cameras.PartsSplitter);
+		ACarConfig.Cameras.PartsDiffuser = mINI_ReadVLTHash(CarINI, "Cameras", "PartsDiffuser", DefaultCarConfig.Cameras.PartsDiffuser);
+		ACarConfig.Cameras.PartsFrontCanard = mINI_ReadVLTHash(CarINI, "Cameras", "PartsFrontCanard", DefaultCarConfig.Cameras.PartsFrontCanard);
+		ACarConfig.Cameras.PartsRearCanard = mINI_ReadVLTHash(CarINI, "Cameras", "PartsRearCanard", DefaultCarConfig.Cameras.PartsRearCanard);
+		ACarConfig.Cameras.PartsExhaust = mINI_ReadVLTHash(CarINI, "Cameras", "PartsExhaust", DefaultCarConfig.Cameras.PartsExhaust);
+		ACarConfig.Cameras.PartsRollCage = mINI_ReadVLTHash(CarINI, "Cameras", "PartsRollCage", DefaultCarConfig.Cameras.PartsRollCage);
 		ACarConfig.Cameras.PartsSpoilers = mINI_ReadVLTHash(CarINI, "Cameras", "PartsSpoilers", DefaultCarConfig.Cameras.PartsSpoilers);
 		ACarConfig.Cameras.PartsRims = mINI_ReadVLTHash(CarINI, "Cameras", "PartsRims", DefaultCarConfig.Cameras.PartsRims);
 		ACarConfig.Cameras.PartsRimsBrand = mINI_ReadVLTHash(CarINI, "Cameras", "PartsRimsBrand", DefaultCarConfig.Cameras.PartsRimsBrand);
@@ -1634,6 +1772,18 @@ void LoadCarConfigs()
 		for (int p = 0; p < NumCarSlots; p++) ACarConfig.StockParts.Parts[p] = DefaultCarConfig.StockParts.Parts[p];
 
 		ACarConfig.StockParts.Parts[23] = mINI_ReadHash(CarINI, "StockParts", "BodyKits", DefaultCarConfig.StockParts.Parts[23]);
+		ACarConfig.StockParts.Parts[8] = mINI_ReadHash(CarINI, "StockParts", "FrontFender", DefaultCarConfig.StockParts.Parts[8]);
+		ACarConfig.StockParts.Parts[6] = mINI_ReadHash(CarINI, "StockParts", "RearFender", DefaultCarConfig.StockParts.Parts[6]);
+		ACarConfig.StockParts.Parts[12] = mINI_ReadHash(CarINI, "StockParts", "FrontBumper", DefaultCarConfig.StockParts.Parts[12]);
+		ACarConfig.StockParts.Parts[16] = mINI_ReadHash(CarINI, "StockParts", "RearBumper", DefaultCarConfig.StockParts.Parts[16]);
+		ACarConfig.StockParts.Parts[11] = mINI_ReadHash(CarINI, "StockParts", "SideSkirts", DefaultCarConfig.StockParts.Parts[11]);
+		ACarConfig.StockParts.Parts[15] = mINI_ReadHash(CarINI, "StockParts", "Trunk", DefaultCarConfig.StockParts.Parts[15]);
+		ACarConfig.StockParts.Parts[2] = mINI_ReadHash(CarINI, "StockParts", "Splitter", DefaultCarConfig.StockParts.Parts[2]);
+		ACarConfig.StockParts.Parts[4] = mINI_ReadHash(CarINI, "StockParts", "Diffuser", DefaultCarConfig.StockParts.Parts[4]);
+		ACarConfig.StockParts.Parts[21] = mINI_ReadHash(CarINI, "StockParts", "FrontCanard", DefaultCarConfig.StockParts.Parts[21]);
+		ACarConfig.StockParts.Parts[21] = mINI_ReadHash(CarINI, "StockParts", "RearCanard", DefaultCarConfig.StockParts.Parts[22]);
+		ACarConfig.StockParts.Parts[13] = mINI_ReadHash(CarINI, "StockParts", "Exhaust", DefaultCarConfig.StockParts.Parts[13]);
+		ACarConfig.StockParts.Parts[14] = mINI_ReadHash(CarINI, "StockParts", "RollCage", DefaultCarConfig.StockParts.Parts[14]);
 		ACarConfig.StockParts.Parts[44] = mINI_ReadHash(CarINI, "StockParts", "Spoilers", DefaultCarConfig.StockParts.Parts[44]);
 		ACarConfig.StockParts.Parts[66] = mINI_ReadHash(CarINI, "StockParts", "RimsFront", DefaultCarConfig.StockParts.Parts[66]);
 		ACarConfig.StockParts.Parts[67] = mINI_ReadHash(CarINI, "StockParts", "RimsRear", DefaultCarConfig.StockParts.Parts[67]);
@@ -1730,6 +1880,18 @@ void LoadCarConfigs()
 		for (int p = 0; p < NumCarSlots; p++) ACarConfig.RandomParts.Parts[p] = DefaultCarConfig.RandomParts.Parts[p];
 
 		ACarConfig.RandomParts.Parts[23] = mINI_ReadInteger(CarINI, "RandomParts", "BodyKits", DefaultCarConfig.RandomParts.Parts[23]) != 0;
+		ACarConfig.RandomParts.Parts[8] = mINI_ReadInteger(CarINI, "RandomParts", "FrontFender", DefaultCarConfig.RandomParts.Parts[8]) != 0;
+		ACarConfig.RandomParts.Parts[6] = mINI_ReadInteger(CarINI, "RandomParts", "RearFender", DefaultCarConfig.RandomParts.Parts[6]) != 0;
+		ACarConfig.RandomParts.Parts[12] = mINI_ReadInteger(CarINI, "RandomParts", "FrontBumper", DefaultCarConfig.RandomParts.Parts[12]) != 0;
+		ACarConfig.RandomParts.Parts[16] = mINI_ReadInteger(CarINI, "RandomParts", "RearBumper", DefaultCarConfig.RandomParts.Parts[16]) != 0;
+		ACarConfig.RandomParts.Parts[11] = mINI_ReadInteger(CarINI, "RandomParts", "SideSkirts", DefaultCarConfig.RandomParts.Parts[11]) != 0;
+		ACarConfig.RandomParts.Parts[15] = mINI_ReadInteger(CarINI, "RandomParts", "Trunk", DefaultCarConfig.RandomParts.Parts[15]) != 0;
+		ACarConfig.RandomParts.Parts[2] = mINI_ReadInteger(CarINI, "RandomParts", "Splitter", DefaultCarConfig.RandomParts.Parts[2]) != 0;
+		ACarConfig.RandomParts.Parts[4] = mINI_ReadInteger(CarINI, "RandomParts", "Diffuser", DefaultCarConfig.RandomParts.Parts[4]) != 0;
+		ACarConfig.RandomParts.Parts[21] = mINI_ReadInteger(CarINI, "RandomParts", "FrontCanard", DefaultCarConfig.RandomParts.Parts[21]) != 0;
+		ACarConfig.RandomParts.Parts[22] = mINI_ReadInteger(CarINI, "RandomParts", "RearCanard", DefaultCarConfig.RandomParts.Parts[22]) != 0;
+		ACarConfig.RandomParts.Parts[13] = mINI_ReadInteger(CarINI, "RandomParts", "Exhaust", DefaultCarConfig.RandomParts.Parts[13]) != 0;
+		ACarConfig.RandomParts.Parts[14] = mINI_ReadInteger(CarINI, "RandomParts", "RollCage", DefaultCarConfig.RandomParts.Parts[14]) != 0;
 		ACarConfig.RandomParts.Parts[44] = mINI_ReadInteger(CarINI, "RandomParts", "Spoilers", DefaultCarConfig.RandomParts.Parts[44]) != 0;
 		ACarConfig.RandomParts.Parts[66] = mINI_ReadInteger(CarINI, "RandomParts", "RimsFront", DefaultCarConfig.RandomParts.Parts[66]) != 0;
 		ACarConfig.RandomParts.Parts[67] = mINI_ReadInteger(CarINI, "RandomParts", "RimsRear", DefaultCarConfig.RandomParts.Parts[67]) != 0;
@@ -1818,6 +1980,18 @@ void LoadCarConfigs()
 
 		// FECooling
 		ACarConfig.FECooling.BodyKits = mINI_ReadFloat(CarINI, "FECooling", "BodyKits", DefaultCarConfig.FECooling.BodyKits);
+		ACarConfig.FECooling.FrontFender = mINI_ReadFloat(CarINI, "FECooling", "FrontFender", DefaultCarConfig.FECooling.FrontFender);
+		ACarConfig.FECooling.RearFender = mINI_ReadFloat(CarINI, "FECooling", "RearFender", DefaultCarConfig.FECooling.RearFender);
+		ACarConfig.FECooling.FrontBumper = mINI_ReadFloat(CarINI, "FECooling", "FrontBumper", DefaultCarConfig.FECooling.FrontBumper);
+		ACarConfig.FECooling.RearBumper = mINI_ReadFloat(CarINI, "FECooling", "RearBumper", DefaultCarConfig.FECooling.RearBumper);
+		ACarConfig.FECooling.SideSkirts = mINI_ReadFloat(CarINI, "FECooling", "SideSkirts", DefaultCarConfig.FECooling.SideSkirts);
+		ACarConfig.FECooling.Trunk = mINI_ReadFloat(CarINI, "FECooling", "Trunk", DefaultCarConfig.FECooling.Trunk);
+		ACarConfig.FECooling.Splitter = mINI_ReadFloat(CarINI, "FECooling", "Splitter", DefaultCarConfig.FECooling.Splitter);
+		ACarConfig.FECooling.Diffuser = mINI_ReadFloat(CarINI, "FECooling", "Diffuser", DefaultCarConfig.FECooling.Diffuser);
+		ACarConfig.FECooling.FrontCanard = mINI_ReadFloat(CarINI, "FECooling", "FrontCanard", DefaultCarConfig.FECooling.FrontCanard);
+		ACarConfig.FECooling.RearCanard = mINI_ReadFloat(CarINI, "FECooling", "RearCanard", DefaultCarConfig.FECooling.RearCanard);
+		ACarConfig.FECooling.Exhaust = mINI_ReadFloat(CarINI, "FECooling", "Exhaust", DefaultCarConfig.FECooling.Exhaust);
+		ACarConfig.FECooling.RollCage = mINI_ReadFloat(CarINI, "FECooling", "RollCage", DefaultCarConfig.FECooling.RollCage);
 		ACarConfig.FECooling.Spoilers = mINI_ReadFloat(CarINI, "FECooling", "Spoilers", DefaultCarConfig.FECooling.Spoilers);
 		ACarConfig.FECooling.Rims = mINI_ReadFloat(CarINI, "FECooling", "Rims", DefaultCarConfig.FECooling.Rims);
 		ACarConfig.FECooling.Hoods = mINI_ReadFloat(CarINI, "FECooling", "Hoods", DefaultCarConfig.FECooling.Hoods);

@@ -202,6 +202,12 @@ void __fastcall CustomizeMain_BuildOptionsList(DWORD* CustomizeMain, void* EDX_U
 			CarConfigs[CarTypeID].Icons.Visual,
 			CarConfigs[CarTypeID].Names.Visual,
 			MenuID::CustomizeCategory_Visual); // Visuals
+
+		if (CarConfigs[CarTypeID].Category.Extra && !IsMenuEmpty_Extra(CarTypeID))
+			CustomizeCategoryScreen_AddCustomOption(CustomizeMain, *(char**)g_pCustomizeSubPkg,
+				CarConfigs[CarTypeID].Icons.Extra,
+				CarConfigs[CarTypeID].Names.Extra,
+				MenuID::CustomizeCategory_Extra); // Extra
 	}
 }
 

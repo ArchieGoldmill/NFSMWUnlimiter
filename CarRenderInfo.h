@@ -735,10 +735,12 @@ void __declspec(naked) TextureReplacementCodeCave()
 	_asm ret;
 }*/
 
-int SlotsToLookForKitWheelModifications[12]
+int SlotsToLookForKitWheelModifications[14]
 {
 	CAR_SLOT_ID::DAMAGE_BODY,
 	CAR_SLOT_ID::BODY,
+	CAR_SLOT_ID::DAMAGE_LEFT_BRAKELIGHT,
+	CAR_SLOT_ID::DAMAGE_LEFT_HEADLIGHT,
 	CAR_SLOT_ID::ATTACHMENT0,
 	CAR_SLOT_ID::ATTACHMENT1,
 	CAR_SLOT_ID::ATTACHMENT2,
@@ -801,7 +803,7 @@ bVector4 __fastcall CarRenderInfo_GetTireOffset(DWORD* CarRenderInfo, void* EDX_
 
 		if (TheRideInfo) // Add Up CarPart Attribute offsets
 		{
-			for (int i = 0; i < 12; i++) // size of SlotsToLookForKitWheelModifications
+			for (int i = 0; i < 14; i++) // size of SlotsToLookForKitWheelModifications
 			{
 				DWORD* Part = RideInfo_GetPart(TheRideInfo, SlotsToLookForKitWheelModifications[i]);
 				if (Part)
@@ -838,7 +840,18 @@ float __fastcall CarRenderInfo_GetTireWidth(DWORD* CarRenderInfo, void* EDX_Unus
 
 		if (TheRideInfo) // Get CarPart Attribute Tire Width
 		{
-			DWORD* Part = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::BODY); // BODY
+			DWORD* Part = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::DAMAGE_LEFT_BRAKELIGHT); 
+			if (Part)
+			{
+				TireSkidWidth = CarPart_GetAppliedAttributeFParam(Part, 0,
+					IsRearWheel ? bStringHash((char*)"REAR_TIRE_WIDTH") : bStringHash((char*)"FRONT_TIRE_WIDTH"),
+					TireSkidWidth);
+			}
+		}
+
+		if (TheRideInfo) // Get CarPart Attribute Tire Width
+		{
+			DWORD* Part = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::DAMAGE_LEFT_HEADLIGHT);
 			if (Part)
 			{
 				TireSkidWidth = CarPart_GetAppliedAttributeFParam(Part, 0,
@@ -878,7 +891,17 @@ float __fastcall CarRenderInfo_GetTireRadius(DWORD* CarRenderInfo, void* EDX_Unu
 
 		if (TheRideInfo) // Get CarPart Attribute Tire Width
 		{
-			DWORD* Part = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::BODY); // BODY
+			DWORD* Part = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::DAMAGE_LEFT_BRAKELIGHT); 
+			if (Part)
+			{
+				TireRadius = CarPart_GetAppliedAttributeFParam(Part, 0,
+					IsRearWheel ? bStringHash((char*)"REAR_TIRE_RADIUS") : bStringHash((char*)"FRONT_TIRE_RADIUS"),
+					TireRadius);
+			}
+		}
+		if (TheRideInfo) // Get CarPart Attribute Tire Width
+		{
+			DWORD* Part = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::DAMAGE_LEFT_HEADLIGHT);
 			if (Part)
 			{
 				TireRadius = CarPart_GetAppliedAttributeFParam(Part, 0,
@@ -913,7 +936,18 @@ float __fastcall CarRenderInfo_GetTireRadiusScale(DWORD* CarRenderInfo, void* ED
 
 		if (TheRideInfo) // Get CarPart Attribute Tire Width
 		{
-			DWORD* Part = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::BODY); // BODY
+			DWORD* Part = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::DAMAGE_LEFT_BRAKELIGHT); 
+			if (Part)
+			{
+				TireRadiusFromAttr = CarPart_GetAppliedAttributeFParam(Part, 0,
+					IsRearWheel ? bStringHash((char*)"REAR_TIRE_RADIUS") : bStringHash((char*)"FRONT_TIRE_RADIUS"),
+					TireRadius);
+			}
+		}
+
+		if (TheRideInfo) // Get CarPart Attribute Tire Width
+		{
+			DWORD* Part = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::DAMAGE_LEFT_HEADLIGHT); 
 			if (Part)
 			{
 				TireRadiusFromAttr = CarPart_GetAppliedAttributeFParam(Part, 0,
@@ -2050,7 +2084,16 @@ float __stdcall GetCamber(DWORD* _CarRenderInfo, float original, bool isRear)
 	DWORD* TheRideInfo = (DWORD*)_CarRenderInfo[33]; // CarRenderInfo->pRideInfo
 	if (TheRideInfo)
 	{
-		DWORD* BodyKitCarPart = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::BODY); // BODY_KIT
+		DWORD* BodyKitCarPart = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::DAMAGE_LEFT_BRAKELIGHT); 
+		if (BodyKitCarPart)
+		{
+			// Read camber attributes from body kit
+			Camber = CarPart_GetAppliedAttributeFParam(BodyKitCarPart, 0, isRear ? bStringHash((char*)"REAR_CAMBER") : bStringHash((char*)"FRONT_CAMBER"), original);
+		}
+	}
+	if (TheRideInfo)
+	{
+		DWORD* BodyKitCarPart = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::DAMAGE_LEFT_HEADLIGHT); 
 		if (BodyKitCarPart)
 		{
 			// Read camber attributes from body kit
@@ -2108,7 +2151,16 @@ float __stdcall GetRideHeight(DWORD* _CarRenderInfo, float original)
 	DWORD* TheRideInfo = (DWORD*)_CarRenderInfo[33]; // CarRenderInfo->pRideInfo
 	if (TheRideInfo)
 	{
-		DWORD* BodyKitCarPart = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::BODY); // BODY_KIT
+		DWORD* BodyKitCarPart = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::DAMAGE_LEFT_BRAKELIGHT); 
+		if (BodyKitCarPart)
+		{
+			// Read height attribute from body kit
+			RideHeight = CarPart_GetAppliedAttributeFParam(BodyKitCarPart, 0, bStringHash((char*)"RIDE_HEIGHT"), original);
+		}
+	}
+	if (TheRideInfo)
+	{
+		DWORD* BodyKitCarPart = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::DAMAGE_LEFT_HEADLIGHT); 
 		if (BodyKitCarPart)
 		{
 			// Read height attribute from body kit
@@ -2128,7 +2180,16 @@ float __stdcall CarRenderInfo_GetExtraPitch(DWORD* _CarRenderInfo, float origina
 	DWORD* TheRideInfo = (DWORD*)_CarRenderInfo[33]; // CarRenderInfo->pRideInfo
 	if (TheRideInfo)
 	{
-		DWORD* BodyKitCarPart = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::BODY); // BODY_KIT
+		DWORD* BodyKitCarPart = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::DAMAGE_LEFT_BRAKELIGHT); 
+		if (BodyKitCarPart)
+		{
+			// Read height attribute from body kit
+			ExtraPitch = CarPart_GetAppliedAttributeFParam(BodyKitCarPart, 0, bStringHash((char*)"EXTRA_PITCH"), original);
+		}
+	}
+	if (TheRideInfo)
+	{
+		DWORD* BodyKitCarPart = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::DAMAGE_LEFT_HEADLIGHT); 
 		if (BodyKitCarPart)
 		{
 			// Read height attribute from body kit
@@ -2148,7 +2209,16 @@ float CarRenderInfo_GetReflectionOffset(DWORD* _CarRenderInfo, float original)
 	DWORD* TheRideInfo = (DWORD*)_CarRenderInfo[33]; // CarRenderInfo->pRideInfo
 	if (TheRideInfo)
 	{
-		DWORD* BodyKitCarPart = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::BODY); // BODY_KIT
+		DWORD* BodyKitCarPart = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::DAMAGE_LEFT_BRAKELIGHT); 
+		if (BodyKitCarPart)
+		{
+			// Read height attribute from body kit
+			ReflectionOffset = CarPart_GetAppliedAttributeFParam(BodyKitCarPart, 0, bStringHash((char*)"REFLECTION_OFFSET"), original);
+		}
+	}
+	if (TheRideInfo)
+	{
+		DWORD* BodyKitCarPart = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::DAMAGE_LEFT_HEADLIGHT); 
 		if (BodyKitCarPart)
 		{
 			// Read height attribute from body kit
@@ -2177,7 +2247,16 @@ float* __fastcall Attrib_Gen_ecar_ExtraRearTireOffset_Hook(DWORD* _CarRenderInfo
 			DWORD* TheRideInfo = (DWORD*)_CarRenderInfo[33]; // CarRenderInfo->pRideInfo
 			if (TheRideInfo)
 			{
-				DWORD* BodyKitCarPart = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::BODY); // BODY_KIT
+				DWORD* BodyKitCarPart = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::DAMAGE_LEFT_BRAKELIGHT); 
+				if (BodyKitCarPart)
+				{
+					// Read attribute from body kit
+					ExtraRearTireOffset = CarPart_GetAppliedAttributeFParam(BodyKitCarPart, 0, bStringHash((char*)"EXTRA_REAR_TIRE_OFFSET"), *ExtraRearTireOffsetPtr);
+				}
+			}
+			if (TheRideInfo)
+			{
+				DWORD* BodyKitCarPart = RideInfo_GetPart(TheRideInfo, CAR_SLOT_ID::DAMAGE_LEFT_HEADLIGHT); 
 				if (BodyKitCarPart)
 				{
 					// Read attribute from body kit

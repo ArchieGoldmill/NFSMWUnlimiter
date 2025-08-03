@@ -171,6 +171,90 @@ int __fastcall CustomizeSub_SetupParts(DWORD* _CustomizeSub, void* EDX_Unused)
             CarConfigs[CarTypeID].Icons.BackroomPartsBodyKits,
             CarConfigs[CarTypeID].Names.PartsBodyKits,
             MenuID::Customize_Parts_Bodykits);
+        if (CarConfigs[CarTypeID].Parts.FrontFender)
+            CustomizeCategoryScreen_AddCustomOption(
+                _CustomizeCategoryScreen,
+                *(char**)g_pCustomizePartsPkg,
+                CarConfigs[CarTypeID].Icons.BackroomPartsFrontFender,
+                CarConfigs[CarTypeID].Names.PartsFrontFender,
+                MenuID::Customize_Parts_FrontFender);
+        if (CarConfigs[CarTypeID].Parts.RearFender)
+            CustomizeCategoryScreen_AddCustomOption(
+                _CustomizeCategoryScreen,
+                *(char**)g_pCustomizePartsPkg,
+                CarConfigs[CarTypeID].Icons.BackroomPartsRearFender,
+                CarConfigs[CarTypeID].Names.PartsRearFender,
+                MenuID::Customize_Parts_RearFender);
+        if (CarConfigs[CarTypeID].Parts.FrontBumper)
+            CustomizeCategoryScreen_AddCustomOption(
+             _CustomizeCategoryScreen,
+             *(char**)g_pCustomizePartsPkg,
+             CarConfigs[CarTypeID].Icons.BackroomPartsFrontBumper,
+             CarConfigs[CarTypeID].Names.PartsFrontBumper,
+             MenuID::Customize_Parts_FrontBumper);
+        if (CarConfigs[CarTypeID].Parts.RearBumper)
+            CustomizeCategoryScreen_AddCustomOption(
+             _CustomizeCategoryScreen,
+             *(char**)g_pCustomizePartsPkg,
+             CarConfigs[CarTypeID].Icons.BackroomPartsRearBumper,
+             CarConfigs[CarTypeID].Names.PartsRearBumper,
+             MenuID::Customize_Parts_RearBumper);
+        if (CarConfigs[CarTypeID].Parts.SideSkirts)
+            CustomizeCategoryScreen_AddCustomOption(
+             _CustomizeCategoryScreen,
+             *(char**)g_pCustomizePartsPkg,
+             CarConfigs[CarTypeID].Icons.BackroomPartsSideSkirts,
+             CarConfigs[CarTypeID].Names.PartsSideSkirts,
+             MenuID::Customize_Parts_SideSkirts);
+        if (CarConfigs[CarTypeID].Parts.Trunk)
+            CustomizeCategoryScreen_AddCustomOption(
+             _CustomizeCategoryScreen,
+             *(char**)g_pCustomizePartsPkg,
+             CarConfigs[CarTypeID].Icons.BackroomPartsTrunk,
+             CarConfigs[CarTypeID].Names.PartsTrunk,
+             MenuID::Customize_Parts_Trunk);
+        if (CarConfigs[CarTypeID].Parts.Splitter)
+            CustomizeCategoryScreen_AddCustomOption(
+             _CustomizeCategoryScreen,
+             *(char**)g_pCustomizePartsPkg,
+             CarConfigs[CarTypeID].Icons.BackroomPartsSplitter,
+             CarConfigs[CarTypeID].Names.PartsSplitter,
+             MenuID::Customize_Parts_Splitter);
+        if (CarConfigs[CarTypeID].Parts.Diffuser)
+            CustomizeCategoryScreen_AddCustomOption(
+             _CustomizeCategoryScreen,
+             *(char**)g_pCustomizePartsPkg,
+             CarConfigs[CarTypeID].Icons.BackroomPartsDiffuser,
+             CarConfigs[CarTypeID].Names.PartsDiffuser,
+             MenuID::Customize_Parts_Diffuser);
+        if (CarConfigs[CarTypeID].Parts.FrontCanard)
+            CustomizeCategoryScreen_AddCustomOption(
+                _CustomizeCategoryScreen,
+                *(char**)g_pCustomizePartsPkg,
+                CarConfigs[CarTypeID].Icons.BackroomPartsFrontCanard,
+                CarConfigs[CarTypeID].Names.PartsFrontCanard,
+                MenuID::Customize_Parts_FrontCanard);
+        if (CarConfigs[CarTypeID].Parts.RearCanard)
+            CustomizeCategoryScreen_AddCustomOption(
+                _CustomizeCategoryScreen,
+                *(char**)g_pCustomizePartsPkg,
+                CarConfigs[CarTypeID].Icons.BackroomPartsRearCanard,
+                CarConfigs[CarTypeID].Names.PartsRearCanard,
+                MenuID::Customize_Parts_RearCanard);
+        if (CarConfigs[CarTypeID].Parts.Exhaust)
+            CustomizeCategoryScreen_AddCustomOption(
+                _CustomizeCategoryScreen,
+                *(char**)g_pCustomizePartsPkg,
+                CarConfigs[CarTypeID].Icons.BackroomPartsExhaust,
+                CarConfigs[CarTypeID].Names.PartsExhaust,
+                MenuID::Customize_Parts_Exhaust);
+        if (CarConfigs[CarTypeID].Parts.RollCage)
+            CustomizeCategoryScreen_AddCustomOption(
+                _CustomizeCategoryScreen,
+                *(char**)g_pCustomizePartsPkg,
+                CarConfigs[CarTypeID].Icons.BackroomPartsRollCage,
+                CarConfigs[CarTypeID].Names.PartsRollCage,
+                MenuID::Customize_Parts_RollCage);
         if (CarConfigs[CarTypeID].Parts.Spoilers)
         CustomizeCategoryScreen_AddCustomOption(
             _CustomizeCategoryScreen,
@@ -216,6 +300,90 @@ int __fastcall CustomizeSub_SetupParts(DWORD* _CustomizeSub, void* EDX_Unused)
             CarConfigs[CarTypeID].Icons.PartsBodyKits,
             CarConfigs[CarTypeID].Names.PartsBodyKits,
             MenuID::Customize_Parts_Bodykits);
+        if (CarConfigs[CarTypeID].Parts.BodyKits)
+        CustomizeCategoryScreen_AddCustomOption(
+            _CustomizeCategoryScreen,
+            *(char**)g_pCustomizePartsPkg,
+            CarConfigs[CarTypeID].Icons.PartsFrontFender,
+            CarConfigs[CarTypeID].Names.PartsFrontFender,
+            MenuID::Customize_Parts_FrontFender);
+        if (CarConfigs[CarTypeID].Parts.BodyKits)
+        CustomizeCategoryScreen_AddCustomOption(
+            _CustomizeCategoryScreen,
+            *(char**)g_pCustomizePartsPkg,
+            CarConfigs[CarTypeID].Icons.PartsRearFender,
+            CarConfigs[CarTypeID].Names.PartsRearFender,
+            MenuID::Customize_Parts_RearFender);
+         if (CarConfigs[CarTypeID].Parts.FrontBumper)
+        CustomizeCategoryScreen_AddCustomOption(
+            _CustomizeCategoryScreen,
+            *(char**)g_pCustomizePartsPkg,
+            CarConfigs[CarTypeID].Icons.PartsFrontBumper,
+            CarConfigs[CarTypeID].Names.PartsFrontBumper,
+            MenuID::Customize_Parts_FrontBumper);
+         if (CarConfigs[CarTypeID].Parts.RearBumper)
+        CustomizeCategoryScreen_AddCustomOption(
+            _CustomizeCategoryScreen,
+            *(char**)g_pCustomizePartsPkg,
+            CarConfigs[CarTypeID].Icons.PartsRearBumper,
+            CarConfigs[CarTypeID].Names.PartsRearBumper,
+            MenuID::Customize_Parts_RearBumper);
+         if (CarConfigs[CarTypeID].Parts.SideSkirts)
+        CustomizeCategoryScreen_AddCustomOption(
+            _CustomizeCategoryScreen,
+            *(char**)g_pCustomizePartsPkg,
+            CarConfigs[CarTypeID].Icons.PartsSideSkirts,
+            CarConfigs[CarTypeID].Names.PartsSideSkirts,
+            MenuID::Customize_Parts_SideSkirts);
+         if (CarConfigs[CarTypeID].Parts.Trunk)
+        CustomizeCategoryScreen_AddCustomOption(
+            _CustomizeCategoryScreen,
+            *(char**)g_pCustomizePartsPkg,
+            CarConfigs[CarTypeID].Icons.PartsTrunk,
+            CarConfigs[CarTypeID].Names.PartsTrunk,
+            MenuID::Customize_Parts_Trunk);
+        if (CarConfigs[CarTypeID].Parts.Splitter)
+             CustomizeCategoryScreen_AddCustomOption(
+             _CustomizeCategoryScreen,
+             *(char**)g_pCustomizePartsPkg,
+             CarConfigs[CarTypeID].Icons.PartsSplitter,
+             CarConfigs[CarTypeID].Names.PartsSplitter,
+             MenuID::Customize_Parts_Splitter);
+        if (CarConfigs[CarTypeID].Parts.Diffuser)
+        CustomizeCategoryScreen_AddCustomOption(
+            _CustomizeCategoryScreen,
+            *(char**)g_pCustomizePartsPkg,
+            CarConfigs[CarTypeID].Icons.PartsDiffuser,
+            CarConfigs[CarTypeID].Names.PartsDiffuser,
+            MenuID::Customize_Parts_Diffuser);
+        if (CarConfigs[CarTypeID].Parts.FrontCanard)
+            CustomizeCategoryScreen_AddCustomOption(
+                _CustomizeCategoryScreen,
+                *(char**)g_pCustomizePartsPkg,
+                CarConfigs[CarTypeID].Icons.PartsFrontCanard,
+                CarConfigs[CarTypeID].Names.PartsFrontCanard,
+                MenuID::Customize_Parts_FrontCanard);
+        if (CarConfigs[CarTypeID].Parts.RearCanard)
+            CustomizeCategoryScreen_AddCustomOption(
+                _CustomizeCategoryScreen,
+                *(char**)g_pCustomizePartsPkg,
+                CarConfigs[CarTypeID].Icons.PartsRearCanard,
+                CarConfigs[CarTypeID].Names.PartsRearCanard,
+                MenuID::Customize_Parts_RearCanard);
+        if (CarConfigs[CarTypeID].Parts.Exhaust)
+            CustomizeCategoryScreen_AddCustomOption(
+                _CustomizeCategoryScreen,
+                *(char**)g_pCustomizePartsPkg,
+                CarConfigs[CarTypeID].Icons.PartsExhaust,
+                CarConfigs[CarTypeID].Names.PartsExhaust,
+                MenuID::Customize_Parts_Exhaust);
+        if (CarConfigs[CarTypeID].Parts.RollCage)
+            CustomizeCategoryScreen_AddCustomOption(
+                _CustomizeCategoryScreen,
+                *(char**)g_pCustomizePartsPkg,
+                CarConfigs[CarTypeID].Icons.PartsRollCage,
+                CarConfigs[CarTypeID].Names.PartsRollCage,
+                MenuID::Customize_Parts_RollCage);
         if (CarConfigs[CarTypeID].Parts.Spoilers)
         CustomizeCategoryScreen_AddCustomOption(
             _CustomizeCategoryScreen,
@@ -1589,6 +1757,9 @@ int __fastcall CustomizeSub_Setup(DWORD* _CustomizeSub, void* EDX_Unused)
         CustomizeSub_SetupPerformance(_CustomizeSub, EDX_Unused);
         break;
     case MenuID::CustomizeCategory_Visual:
+        CustomizeSub_SetupVisual(_CustomizeSub, EDX_Unused);
+        break;
+    case MenuID::CustomizeCategory_Extra:
         CustomizeSub_SetupVisual(_CustomizeSub, EDX_Unused);
         break;
 

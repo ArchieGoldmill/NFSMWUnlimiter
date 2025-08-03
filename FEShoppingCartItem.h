@@ -19,6 +19,42 @@ int __fastcall FEShoppingCartItem_GetCarPartCatHash(DWORD* _this, int EDX_Unused
     case CAR_SLOT_ID::BODY:
         result = CarConfigs[CarTypeID].Names.PartsBodyKits;
         break;
+    case CAR_SLOT_ID::DAMAGE_LEFT_HEADLIGHT:
+        result = CarConfigs[CarTypeID].Names.PartsFrontFender;
+        break;
+    case CAR_SLOT_ID::DAMAGE_LEFT_BRAKELIGHT:
+        result = CarConfigs[CarTypeID].Names.PartsRearFender;
+        break;
+    case CAR_SLOT_ID::DAMAGE_FRONT_BUMPER:
+        result = CarConfigs[CarTypeID].Names.PartsFrontBumper;
+        break;
+    case CAR_SLOT_ID::DAMAGE_REAR_BUMPER:
+        result = CarConfigs[CarTypeID].Names.PartsRearBumper;
+        break;
+    case CAR_SLOT_ID::DAMAGE_BUSHGUARD:
+        result = CarConfigs[CarTypeID].Names.PartsSideSkirts;
+        break;
+    case CAR_SLOT_ID::DAMAGE_TRUNK:
+        result = CarConfigs[CarTypeID].Names.PartsTrunk;
+        break;
+    case CAR_SLOT_ID::DAMAGE_BODY:
+        result = CarConfigs[CarTypeID].Names.PartsSplitter;
+        break;
+    case CAR_SLOT_ID::DAMAGE_COP_SPOILER:
+        result = CarConfigs[CarTypeID].Names.PartsDiffuser;
+        break;
+    case CAR_SLOT_ID::DAMAGE_LEFT_DOOR:
+        result = CarConfigs[CarTypeID].Names.PartsFrontCanard;
+        break;
+    case CAR_SLOT_ID::DAMAGE_LEFT_REAR_DOOR:
+        result = CarConfigs[CarTypeID].Names.PartsRearCanard;
+        break;
+    case CAR_SLOT_ID::DAMAGE_RIGHT_DOOR:
+        result = CarConfigs[CarTypeID].Names.PartsExhaust;
+        break;
+    case CAR_SLOT_ID::DAMAGE_RIGHT_REAR_DOOR:
+        result = CarConfigs[CarTypeID].Names.PartsRollCage;
+        break;
     case CAR_SLOT_ID::FRONT_BRAKE:
         result = CarConfigs[CarTypeID].Names.PartsBrakes;
         break;

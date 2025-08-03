@@ -288,10 +288,23 @@ typedef struct
 	bool Parts;
 	bool Performance;
 	bool Visual;
+	bool Extra;
 } CategorySection;
 typedef struct
 {
 	bool BodyKits;
+	bool FrontFender;
+	bool RearFender;
+	bool FrontBumper;
+	bool RearBumper;
+	bool SideSkirts;
+	bool Trunk;
+	bool Splitter;
+	bool Diffuser;
+	bool FrontCanard;
+	bool RearCanard;
+	bool Exhaust;
+	bool RollCage;
 	bool Spoilers;
 	bool Rims;
 	bool RimsCustom;
@@ -341,6 +354,18 @@ typedef struct
 {
 	DWORD Parts;
 	DWORD PartsBodyKits;
+	DWORD PartsFrontFender;
+	DWORD PartsRearFender;
+	DWORD PartsFrontBumper;
+	DWORD PartsRearBumper;
+	DWORD PartsSideSkirts;
+	DWORD PartsTrunk;
+	DWORD PartsSplitter;
+	DWORD PartsDiffuser;
+	DWORD PartsFrontCanard;
+	DWORD PartsRearCanard;
+	DWORD PartsExhaust;
+	DWORD PartsRollCage;
 	DWORD PartsSpoilers;
 	DWORD PartsSpoilersCF;
 	DWORD PartsRims;
@@ -440,6 +465,18 @@ typedef struct
 	DWORD VisualNeon;
 	DWORD BackroomParts;
 	DWORD BackroomPartsBodyKits;
+	DWORD BackroomPartsFrontFender;
+	DWORD BackroomPartsRearFender;
+	DWORD BackroomPartsFrontBumper;
+	DWORD BackroomPartsRearBumper;
+	DWORD BackroomPartsSideSkirts;
+	DWORD BackroomPartsTrunk;
+	DWORD BackroomPartsSplitter;
+	DWORD BackroomPartsDiffuser;
+	DWORD BackroomPartsFrontCanard;
+	DWORD BackroomPartsRearCanard;
+	DWORD BackroomPartsExhaust;
+	DWORD BackroomPartsRollCage;
 	DWORD BackroomPartsSpoilers;
 	DWORD BackroomPartsSpoilersCF;
 	DWORD BackroomPartsRims;
@@ -617,11 +654,24 @@ typedef struct
 	DWORD PerformanceSuperchargerLevel3Item2;
 	DWORD PerformanceSuperchargerLevel3Item3;
 	DWORD PerformanceSuperchargerJunkmanItem;
+	DWORD Extra;
 } IconsSection;
 typedef struct
 {
 	DWORD Parts;
 	DWORD PartsBodyKits;
+	DWORD PartsFrontFender;
+	DWORD PartsRearFender;
+	DWORD PartsFrontBumper;
+	DWORD PartsRearBumper;
+	DWORD PartsSideSkirts;
+	DWORD PartsTrunk;
+	DWORD PartsSplitter;
+	DWORD PartsDiffuser;
+	DWORD PartsFrontCanard;
+	DWORD PartsRearCanard;
+	DWORD PartsExhaust;
+	DWORD PartsRollCage;
 	DWORD PartsSpoilers;
 	DWORD PartsRims;
 	DWORD PartsRimsBrand;
@@ -881,10 +931,23 @@ typedef struct
 	DWORD PerformanceSuperchargerLevel3Item2;
 	DWORD PerformanceSuperchargerLevel3Item3;
 	DWORD PerformanceSuperchargerJunkmanItem;
+	DWORD Extra;
 } NamesSection;
 typedef struct
 {
 	DWORD PartsBodyKits;
+	DWORD PartsFrontFender;
+	DWORD PartsRearFender;
+	DWORD PartsFrontBumper;
+	DWORD PartsRearBumper;
+	DWORD PartsSideSkirts;
+	DWORD PartsTrunk;
+	DWORD PartsSplitter;
+	DWORD PartsDiffuser;
+	DWORD PartsFrontCanard;
+	DWORD PartsRearCanard;
+	DWORD PartsExhaust;
+	DWORD PartsRollCage;
 	DWORD PartsSpoilers;
 	DWORD PartsRims;
 	DWORD PartsRimsBrand;
@@ -971,6 +1034,7 @@ typedef struct
 	DWORD VisualLicensePlate;
 	DWORD VisualTires;
 	DWORD VisualNeon;
+	DWORD Extra;
 } CamerasSection;
 
 typedef struct
@@ -988,6 +1052,18 @@ typedef struct
 typedef struct
 {
 	float BodyKits;
+	float FrontFender;
+	float RearFender;
+	float FrontBumper;
+	float RearBumper;
+	float SideSkirts;
+	float Trunk;
+	float Splitter;
+	float Diffuser;
+	float FrontCanard;
+	float RearCanard;
+	float Exhaust;
+	float RollCage;
 	float Spoilers;
 	float Rims;
 	float Hoods;

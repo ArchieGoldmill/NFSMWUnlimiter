@@ -45,6 +45,18 @@ int GetDefaultNumDecals(int DecalLocation)
 bool IsMenuEmpty_Parts(int CarTypeID)
 {
 	if (CarConfigs[CarTypeID].Parts.BodyKits != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.FrontFender != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.RearFender != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.FrontBumper != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.RearBumper != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.SideSkirts != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.Trunk != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.Splitter != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.Diffuser != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.FrontCanard != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.RearCanard != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.Exhaust != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.RollCage != 0) return 0;
 	if (CarConfigs[CarTypeID].Parts.Spoilers != 0) return 0;
 	if (CarConfigs[CarTypeID].Parts.Rims != 0) return 0;
 	if (CarConfigs[CarTypeID].Parts.Hoods != 0) return 0;
@@ -64,6 +76,18 @@ bool IsMenuEmpty_Parts(int CarTypeID)
 bool IsMenuEmpty_PartsBackroom(int CarTypeID)
 {
 	if (CarConfigs[CarTypeID].Parts.BodyKits != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.FrontFender != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.RearFender != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.FrontBumper != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.RearBumper != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.SideSkirts != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.Trunk != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.Splitter != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.Diffuser != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.FrontCanard != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.RearCanard != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.Exhaust != 0) return 0;
+	if (CarConfigs[CarTypeID].Parts.RollCage != 0) return 0;
 	if (CarConfigs[CarTypeID].Parts.Spoilers != 0) return 0;
 	if (CarConfigs[CarTypeID].Parts.Rims != 0) return 0;
 	if (CarConfigs[CarTypeID].Parts.Hoods != 0) return 0;
@@ -87,6 +111,24 @@ bool IsMenuEmpty_Performance(int CarTypeID)
 }
 
 bool IsMenuEmpty_Visual(int CarTypeID)
+{
+	if (CarConfigs[CarTypeID].Visual.Paint != 0) return 0;
+	if (CarConfigs[CarTypeID].Visual.Vinyls != 0) return 0;
+	if (CarConfigs[CarTypeID].Visual.RimPaint != 0) return 0;
+	if (CarConfigs[CarTypeID].Visual.WindowTint != 0) return 0;
+	if (CarConfigs[CarTypeID].Visual.Decals) return 0;
+	if (CarConfigs[CarTypeID].Visual.Numbers != 0) return 0;
+	if (!BETACompatibility && (CarConfigs[CarTypeID].Visual.CustomGauges != 0)) return 0;
+	if (CarConfigs[CarTypeID].Visual.Driver != 0) return 0;
+	if (CarConfigs[CarTypeID].Visual.LicensePlate != 0) return 0;
+	if (CarConfigs[CarTypeID].Visual.Tires != 0) return 0;
+	if (CarConfigs[CarTypeID].Visual.Neon != 0) return 0;
+
+	return 1;
+}
+
+
+bool IsMenuEmpty_Extra(int CarTypeID)
 {
 	if (CarConfigs[CarTypeID].Visual.Paint != 0) return 0;
 	if (CarConfigs[CarTypeID].Visual.Vinyls != 0) return 0;

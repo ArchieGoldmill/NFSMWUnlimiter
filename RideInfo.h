@@ -574,6 +574,7 @@ void __fastcall RideInfo_SetRandomParts(DWORD* RideInfo, void* EDX_Unused)
 		if (CarConfigs[CarTypeID].RandomParts.Parts[CAR_SLOT_ID::ATTACHMENT7]) RideInfo_SetRandomPart(RideInfo, CAR_SLOT_ID::ATTACHMENT7, -1);
 		if (CarConfigs[CarTypeID].RandomParts.Parts[CAR_SLOT_ID::ATTACHMENT8]) RideInfo_SetRandomPart(RideInfo, CAR_SLOT_ID::ATTACHMENT8, -1);
 		if (CarConfigs[CarTypeID].RandomParts.Parts[CAR_SLOT_ID::ATTACHMENT9]) RideInfo_SetRandomPart(RideInfo, CAR_SLOT_ID::ATTACHMENT9, -1);
+		if (CarConfigs[CarTypeID].RandomParts.Parts[CAR_SLOT_ID::DAMAGE_FRONT_BUMPER]) RideInfo_SetRandomPart(RideInfo, CAR_SLOT_ID::DAMAGE_FRONT_BUMPER, -1);
 		if (CarConfigs[CarTypeID].RandomParts.Parts[CAR_SLOT_ID::BASE_PAINT]) RideInfo_SetRandomPart(RideInfo, CAR_SLOT_ID::BASE_PAINT, -1);
 		if (CarConfigs[CarTypeID].RandomParts.Parts[CAR_SLOT_ID::VINYL_LAYER0])
 		{

@@ -335,6 +335,93 @@ void __fastcall CustomizeParts_Setup(DWORD* _CustomizeParts, void* EDX_Unused)
 			_CustomizeParts[87] = CarConfigs[CarTypeID].Names.PartsBodyKits;
 			break;
 
+		case MenuID::Customize_Parts_FrontFender:
+			CarSlotID = CAR_SLOT_ID::DAMAGE_LEFT_HEADLIGHT;
+			PartIconNormal = CustomizeIsInBackRoom() != 0
+				? CarConfigs[CarTypeID].Icons.BackroomPartsFrontFender
+				: CarConfigs[CarTypeID].Icons.PartsFrontFender;
+			_CustomizeParts[87] = CarConfigs[CarTypeID].Names.PartsFrontFender;
+			break;
+		case MenuID::Customize_Parts_RearFender:
+			CarSlotID = CAR_SLOT_ID::DAMAGE_LEFT_BRAKELIGHT;
+			PartIconNormal = CustomizeIsInBackRoom() != 0
+				? CarConfigs[CarTypeID].Icons.BackroomPartsRearFender
+				: CarConfigs[CarTypeID].Icons.PartsRearFender;
+			_CustomizeParts[87] = CarConfigs[CarTypeID].Names.PartsRearFender;
+			break;
+
+		case MenuID::Customize_Parts_FrontBumper:
+			CarSlotID = CAR_SLOT_ID::DAMAGE_FRONT_BUMPER;
+			PartIconNormal = CustomizeIsInBackRoom() != 0
+				? CarConfigs[CarTypeID].Icons.BackroomPartsFrontBumper
+				: CarConfigs[CarTypeID].Icons.PartsFrontBumper;
+			_CustomizeParts[87] = CarConfigs[CarTypeID].Names.PartsFrontBumper;
+			break;
+
+		case MenuID::Customize_Parts_RearBumper:
+			CarSlotID = CAR_SLOT_ID::DAMAGE_REAR_BUMPER;
+			PartIconNormal = CustomizeIsInBackRoom() != 0
+				? CarConfigs[CarTypeID].Icons.BackroomPartsRearBumper
+				: CarConfigs[CarTypeID].Icons.PartsRearBumper;
+			_CustomizeParts[87] = CarConfigs[CarTypeID].Names.PartsRearBumper;
+			break;
+		case MenuID::Customize_Parts_SideSkirts:
+			CarSlotID = CAR_SLOT_ID::DAMAGE_BUSHGUARD;
+			PartIconNormal = CustomizeIsInBackRoom() != 0
+				? CarConfigs[CarTypeID].Icons.BackroomPartsSideSkirts
+				: CarConfigs[CarTypeID].Icons.PartsSideSkirts;
+			_CustomizeParts[87] = CarConfigs[CarTypeID].Names.PartsSideSkirts;
+			break;
+		case MenuID::Customize_Parts_Trunk:
+			CarSlotID = CAR_SLOT_ID::DAMAGE_TRUNK;
+			PartIconNormal = CustomizeIsInBackRoom() != 0
+				? CarConfigs[CarTypeID].Icons.BackroomPartsTrunk
+				: CarConfigs[CarTypeID].Icons.PartsTrunk;
+			_CustomizeParts[87] = CarConfigs[CarTypeID].Names.PartsTrunk;
+			break;
+		case MenuID::Customize_Parts_Splitter:
+			CarSlotID = CAR_SLOT_ID::DAMAGE_BODY;
+			PartIconNormal = CustomizeIsInBackRoom() != 0
+				? CarConfigs[CarTypeID].Icons.BackroomPartsSplitter
+				: CarConfigs[CarTypeID].Icons.PartsSplitter;
+			_CustomizeParts[87] = CarConfigs[CarTypeID].Names.PartsSplitter;
+			break;
+		case MenuID::Customize_Parts_Diffuser:
+			CarSlotID = CAR_SLOT_ID::DAMAGE_COP_SPOILER;
+			PartIconNormal = CustomizeIsInBackRoom() != 0
+				? CarConfigs[CarTypeID].Icons.BackroomPartsDiffuser
+				: CarConfigs[CarTypeID].Icons.PartsDiffuser;
+			_CustomizeParts[87] = CarConfigs[CarTypeID].Names.PartsDiffuser;
+			break;
+		case MenuID::Customize_Parts_FrontCanard:
+			CarSlotID = CAR_SLOT_ID::DAMAGE_LEFT_DOOR;
+			PartIconNormal = CustomizeIsInBackRoom() != 0
+				? CarConfigs[CarTypeID].Icons.BackroomPartsFrontCanard
+				: CarConfigs[CarTypeID].Icons.PartsFrontCanard;
+			_CustomizeParts[87] = CarConfigs[CarTypeID].Names.PartsFrontCanard;
+			break;
+		case MenuID::Customize_Parts_RearCanard:
+			CarSlotID = CAR_SLOT_ID::DAMAGE_LEFT_REAR_DOOR;
+			PartIconNormal = CustomizeIsInBackRoom() != 0
+				? CarConfigs[CarTypeID].Icons.BackroomPartsRearCanard
+				: CarConfigs[CarTypeID].Icons.PartsRearCanard;
+			_CustomizeParts[87] = CarConfigs[CarTypeID].Names.PartsRearCanard;
+			break;
+		case MenuID::Customize_Parts_Exhaust:
+			CarSlotID = CAR_SLOT_ID::DAMAGE_RIGHT_DOOR;
+			PartIconNormal = CustomizeIsInBackRoom() != 0
+				? CarConfigs[CarTypeID].Icons.BackroomPartsExhaust
+				: CarConfigs[CarTypeID].Icons.PartsExhaust;
+			_CustomizeParts[87] = CarConfigs[CarTypeID].Names.PartsExhaust;
+			break;
+		case MenuID::Customize_Parts_RollCage:
+			CarSlotID = CAR_SLOT_ID::DAMAGE_RIGHT_REAR_DOOR;
+			PartIconNormal = CustomizeIsInBackRoom() != 0
+				? CarConfigs[CarTypeID].Icons.BackroomPartsRollCage
+				: CarConfigs[CarTypeID].Icons.PartsRollCage;
+			_CustomizeParts[87] = CarConfigs[CarTypeID].Names.PartsRollCage;
+			break;
+
 		case MenuID::Customize_Parts_Hoods:
 			CarSlotID = CAR_SLOT_ID::HOOD;
 			PartIconNormal = CustomizeIsInBackRoom() != 0
@@ -454,7 +541,6 @@ void __fastcall CustomizeParts_Setup(DWORD* _CustomizeParts, void* EDX_Unused)
 			PartIconNormal = CarConfigs[CarTypeID].Icons.PartsAttachment9;
 			_CustomizeParts[87] = CarConfigs[CarTypeID].Names.PartsAttachment9;
 			break;
-
 		case MenuID::Customize_Visual_WindowTint: // Window Tint
 			CarSlotID = CAR_SLOT_ID::WINDOW_TINT;
 			PartIconNormal = CarConfigs[CarTypeID].Icons.VisualWindowTint;

@@ -426,6 +426,42 @@ DWORD FindScreenCameraInfo(DWORD ScreenInfo)
 			case MenuID::Customize_Parts_Bodykits:
 				CustomAngle = CarConfigs[CarTypeID].Cameras.PartsBodyKits;
 				break;
+			case MenuID::Customize_Parts_FrontFender:
+				CustomAngle = CarConfigs[CarTypeID].Cameras.PartsFrontFender;
+				break;
+			case MenuID::Customize_Parts_RearFender:
+				CustomAngle = CarConfigs[CarTypeID].Cameras.PartsRearFender;
+				break;
+			case MenuID::Customize_Parts_FrontBumper:
+				CustomAngle = CarConfigs[CarTypeID].Cameras.PartsFrontBumper;
+				break;
+			case MenuID::Customize_Parts_RearBumper:
+				CustomAngle = CarConfigs[CarTypeID].Cameras.PartsRearBumper;
+				break;
+			case MenuID::Customize_Parts_SideSkirts:
+				CustomAngle = CarConfigs[CarTypeID].Cameras.PartsSideSkirts;
+				break;
+			case MenuID::Customize_Parts_Trunk:
+				CustomAngle = CarConfigs[CarTypeID].Cameras.PartsTrunk;
+				break;
+			case MenuID::Customize_Parts_Splitter:
+				CustomAngle = CarConfigs[CarTypeID].Cameras.PartsSplitter;
+				break;
+			case MenuID::Customize_Parts_Diffuser:
+				CustomAngle = CarConfigs[CarTypeID].Cameras.PartsDiffuser;
+				break;
+			case MenuID::Customize_Parts_FrontCanard:
+				CustomAngle = CarConfigs[CarTypeID].Cameras.PartsFrontCanard;
+				break;
+			case MenuID::Customize_Parts_RearCanard:
+				CustomAngle = CarConfigs[CarTypeID].Cameras.PartsRearCanard;
+				break;
+			case MenuID::Customize_Parts_Exhaust:
+				CustomAngle = CarConfigs[CarTypeID].Cameras.PartsExhaust;
+				break;
+			case MenuID::Customize_Parts_RollCage:
+				CustomAngle = CarConfigs[CarTypeID].Cameras.PartsRollCage;
+				break;
 			case MenuID::Customize_Parts_Spoilers:
 				CustomAngle = CarConfigs[CarTypeID].Cameras.PartsSpoilers;
 				break;

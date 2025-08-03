@@ -244,6 +244,66 @@ void __fastcall CarCustomizeManager_UpdateHeatOnVehicle(DWORD* CarCustomizeManag
             if (CustomFECoolingValue != 0.0f) FECareerRecord[3] = FECareerRecord[3] * CustomFECoolingValue * HeatAdjustMultiplier;
             else FECareerRecord_AdjustHeatOnBodyKitApplied(FECareerRecord, HeatAdjustMultiplier);
             break;
+		case CAR_SLOT_ID::DAMAGE_LEFT_HEADLIGHT:
+			CustomFECoolingValue = CarConfigs[CarType].FECooling.FrontFender;
+			if (CustomFECoolingValue != 0.0f) FECareerRecord[3] = FECareerRecord[3] * CustomFECoolingValue * HeatAdjustMultiplier;
+			else FECareerRecord_AdjustHeatOnBodyKitApplied(FECareerRecord, HeatAdjustMultiplier);
+			break;
+		case CAR_SLOT_ID::DAMAGE_LEFT_BRAKELIGHT:
+			CustomFECoolingValue = CarConfigs[CarType].FECooling.RearFender;
+			if (CustomFECoolingValue != 0.0f) FECareerRecord[3] = FECareerRecord[3] * CustomFECoolingValue * HeatAdjustMultiplier;
+			else FECareerRecord_AdjustHeatOnBodyKitApplied(FECareerRecord, HeatAdjustMultiplier);
+			break;
+		case CAR_SLOT_ID::DAMAGE_FRONT_BUMPER:
+			CustomFECoolingValue = CarConfigs[CarType].FECooling.FrontBumper;
+			if (CustomFECoolingValue != 0.0f) FECareerRecord[3] = FECareerRecord[3] * CustomFECoolingValue * HeatAdjustMultiplier;
+			else FECareerRecord_AdjustHeatOnBodyKitApplied(FECareerRecord, HeatAdjustMultiplier);
+			break;
+		case CAR_SLOT_ID::DAMAGE_REAR_BUMPER:
+			CustomFECoolingValue = CarConfigs[CarType].FECooling.RearBumper;
+			if (CustomFECoolingValue != 0.0f) FECareerRecord[3] = FECareerRecord[3] * CustomFECoolingValue * HeatAdjustMultiplier;
+			else FECareerRecord_AdjustHeatOnBodyKitApplied(FECareerRecord, HeatAdjustMultiplier);
+			break;
+		case CAR_SLOT_ID::DAMAGE_BUSHGUARD:
+			CustomFECoolingValue = CarConfigs[CarType].FECooling.SideSkirts;
+			if (CustomFECoolingValue != 0.0f) FECareerRecord[3] = FECareerRecord[3] * CustomFECoolingValue * HeatAdjustMultiplier;
+			else FECareerRecord_AdjustHeatOnBodyKitApplied(FECareerRecord, HeatAdjustMultiplier);
+			break;
+		case CAR_SLOT_ID::DAMAGE_TRUNK:
+			CustomFECoolingValue = CarConfigs[CarType].FECooling.Trunk;
+			if (CustomFECoolingValue != 0.0f) FECareerRecord[3] = FECareerRecord[3] * CustomFECoolingValue * HeatAdjustMultiplier;
+			else FECareerRecord_AdjustHeatOnBodyKitApplied(FECareerRecord, HeatAdjustMultiplier);
+			break;
+		case CAR_SLOT_ID::DAMAGE_BODY:
+			CustomFECoolingValue = CarConfigs[CarType].FECooling.Splitter;
+			if (CustomFECoolingValue != 0.0f) FECareerRecord[3] = FECareerRecord[3] * CustomFECoolingValue * HeatAdjustMultiplier;
+			else FECareerRecord_AdjustHeatOnBodyKitApplied(FECareerRecord, HeatAdjustMultiplier);
+			break;
+		case CAR_SLOT_ID::DAMAGE_COP_SPOILER:
+			CustomFECoolingValue = CarConfigs[CarType].FECooling.Diffuser;
+			if (CustomFECoolingValue != 0.0f) FECareerRecord[3] = FECareerRecord[3] * CustomFECoolingValue * HeatAdjustMultiplier;
+			else FECareerRecord_AdjustHeatOnBodyKitApplied(FECareerRecord, HeatAdjustMultiplier);
+			break;
+		case CAR_SLOT_ID::DAMAGE_LEFT_DOOR:
+			CustomFECoolingValue = CarConfigs[CarType].FECooling.FrontCanard;
+			if (CustomFECoolingValue != 0.0f) FECareerRecord[3] = FECareerRecord[3] * CustomFECoolingValue * HeatAdjustMultiplier;
+			else FECareerRecord_AdjustHeatOnBodyKitApplied(FECareerRecord, HeatAdjustMultiplier);
+			break;
+		case CAR_SLOT_ID::DAMAGE_LEFT_REAR_DOOR:
+			CustomFECoolingValue = CarConfigs[CarType].FECooling.RearCanard;
+			if (CustomFECoolingValue != 0.0f) FECareerRecord[3] = FECareerRecord[3] * CustomFECoolingValue * HeatAdjustMultiplier;
+			else FECareerRecord_AdjustHeatOnBodyKitApplied(FECareerRecord, HeatAdjustMultiplier);
+			break;
+		case CAR_SLOT_ID::DAMAGE_RIGHT_DOOR:
+			CustomFECoolingValue = CarConfigs[CarType].FECooling.Exhaust;
+			if (CustomFECoolingValue != 0.0f) FECareerRecord[3] = FECareerRecord[3] * CustomFECoolingValue * HeatAdjustMultiplier;
+			else FECareerRecord_AdjustHeatOnBodyKitApplied(FECareerRecord, HeatAdjustMultiplier);
+			break;
+		case CAR_SLOT_ID::DAMAGE_RIGHT_REAR_DOOR:
+			CustomFECoolingValue = CarConfigs[CarType].FECooling.RollCage;
+			if (CustomFECoolingValue != 0.0f) FECareerRecord[3] = FECareerRecord[3] * CustomFECoolingValue * HeatAdjustMultiplier;
+			else FECareerRecord_AdjustHeatOnBodyKitApplied(FECareerRecord, HeatAdjustMultiplier);
+			break;
 		case CAR_SLOT_ID::SPOILER:
             CustomFECoolingValue = CarConfigs[CarType].FECooling.Spoilers;
             if (CustomFECoolingValue != 0.0f) FECareerRecord[3] = FECareerRecord[3] * CustomFECoolingValue * HeatAdjustMultiplier;
@@ -500,6 +560,42 @@ bool __fastcall CarCustomizeManager_IsCategoryNew(DWORD* _CarCustomizeManager, v
 			{
 				// Body Parts
 			case MenuID::Customize_Parts_Bodykits: // Body kits
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_FrontFender: // Front Fender
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_RearFender: // Rear Fender
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_FrontBumper: // Front Bumpers
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_RearBumper: // Front Bumpers
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_SideSkirts: // Side Skirts
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_Trunk: // Side Skirts
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_Splitter: // Splitter
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_Diffuser: // Diffuser
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_FrontCanard: // FrontCanard
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_RearCanard: // RearCanardr
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_Exhaust: // Exhaust
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_RollCage: // RollCage
 				UnlockableID = 11;
 				break;
 			case MenuID::Customize_Parts_Spoilers: // Spoilers
@@ -900,6 +996,42 @@ bool __fastcall CarCustomizeManager_IsCategoryLocked(DWORD* _CarCustomizeManager
 			case MenuID::Customize_Parts_Bodykits: // Body kits
 				UnlockableID = 11;
 				break;
+			case MenuID::Customize_Parts_FrontFender: // Front Fender
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_RearFender: // Rear Fender
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_FrontBumper: // Front Bumper
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_RearBumper: // Rear Bumper
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_SideSkirts: // Side Skirts
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_Trunk: // Trunk
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_Splitter: // Splitter
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_Diffuser: // Diffuser
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_FrontCanard: // FrontCanard
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_RearCanard: // RearCanardr
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_Exhaust: // Exhaust
+				UnlockableID = 11;
+				break;
+			case MenuID::Customize_Parts_RollCage: // RollCage
+				UnlockableID = 11;
+				break;
 			case MenuID::Customize_Parts_Spoilers: // Spoilers
 				UnlockableID = 12;
 				break;
@@ -1078,6 +1210,42 @@ DWORD __fastcall CarCustomizeManager_GetUnlockHash_CarPart(DWORD* _CarCustomizeM
 			// Parts
 		case MenuID::Customize_Parts_Bodykits:
 			UnlockString = "PARTS_BODYKITS";
+			break;
+		case MenuID::Customize_Parts_FrontFender:
+			UnlockString = "PARTS_FRONT_FENDER";
+			break;
+		case MenuID::Customize_Parts_RearFender:
+			UnlockString = "PARTS_REAR_FENDER";
+			break;
+		case MenuID::Customize_Parts_FrontBumper:
+			UnlockString = "PARTS_FRONT_BUMPER";
+			break;
+		case MenuID::Customize_Parts_RearBumper:
+			UnlockString = "PARTS_REAR_BUMPER";
+			break;
+		case MenuID::Customize_Parts_SideSkirts:
+			UnlockString = "PARTS_REAR_BUMPER";
+			break;
+		case MenuID::Customize_Parts_Trunk:
+			UnlockString = "PARTS_TRUNK";
+			break;
+		case MenuID::Customize_Parts_Splitter:
+			UnlockString = "PARTS_SPLITTER";
+			break;
+		case MenuID::Customize_Parts_Diffuser:
+			UnlockString = "PARTS_DIFFUSER";
+			break;
+		case MenuID::Customize_Parts_FrontCanard:
+			UnlockString = "PARTS_FRONT_CANARD";
+			break;
+		case MenuID::Customize_Parts_RearCanard:
+			UnlockString = "PARTS_REAR_CANARD";
+			break;
+		case MenuID::Customize_Parts_Exhaust:
+			UnlockString = "PARTS_EXHAUST";
+			break;
+		case MenuID::Customize_Parts_RollCage:
+			UnlockString = "PARTS_ROLL_CAGE";
 			break;
 		case MenuID::Customize_Parts_Spoilers:
 			UnlockString = "PARTS_SPOILERS";
