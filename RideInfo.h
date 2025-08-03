@@ -1,5 +1,6 @@
 #include "stdio.h"
 #include "InGameFunctions.h"
+#include "PartLinker.h"
 
 unsigned int __fastcall RideInfo_SetPart(DWORD* RideInfo, void* EDX_Unused, int CarSlotID, unsigned int CarPart, bool UpdateEnabled)
 {
@@ -95,6 +96,8 @@ unsigned int __fastcall RideInfo_SetPart(DWORD* RideInfo, void* EDX_Unused, int 
 		RideInfo[18 + CAR_SLOT_ID::DECAL_LEFT_QUARTER_RECT_MEDIUM] = CarPartDatabase_NewGetCarPart((DWORD*)_CarPartDB, RideInfo[0], CAR_SLOT_ID::DECAL_LEFT_QUARTER_RECT_MEDIUM, bStringHash2((char*)"DECAL_LEFT_QUARTER_RECT_MEDIUM", KitNameHash), 0, -1); // DECAL_LEFT_QUARTER_RECT_MEDIUM
 		RideInfo[18 + CAR_SLOT_ID::DECAL_RIGHT_QUARTER_RECT_MEDIUM] = CarPartDatabase_NewGetCarPart((DWORD*)_CarPartDB, RideInfo[0], CAR_SLOT_ID::DECAL_RIGHT_QUARTER_RECT_MEDIUM, bStringHash2((char*)"DECAL_RIGHT_QUARTER_RECT_MEDIUM", KitNameHash), 0, -1); // DECAL_RIGHT_QUARTER_RECT_MEDIUM
 		
+		PartLinker::LinkBodyParts(RideInfo, CarPart, KitNumber);
+
 		goto SetSinglePart;
 
 	case CAR_SLOT_ID::FRONT_BRAKE: // FRONT_BRAKE

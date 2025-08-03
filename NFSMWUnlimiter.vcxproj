@@ -49,11 +49,12 @@
     <ExternalIncludePath>$(ExternalIncludePath)</ExternalIncludePath>
     <LibraryPath>$(DXSDK_DIR)lib\x86;$(LibraryPath)</LibraryPath>
     <ReferencePath>$(ReferencePath)</ReferencePath>
+    <OutDir>D:\Games\Need for Speed Most Wanted SR\scripts\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <TargetExt>.asi</TargetExt>
-    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <OutDir>D:\Games\Need for Speed Most Wanted SR\scripts\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
     <IncludePath>$(DXSDK_DIR)include;$(IncludePath)</IncludePath>
     <ExternalIncludePath>$(ExternalIncludePath)</ExternalIncludePath>
@@ -75,8 +76,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(TargetDir)*.asi" "G:\Oyunlar\Need for Speed Most Wanted Dirty\scripts"  /y
-copy "$(TargetDir)*.pdb" "G:\Oyunlar\Need for Speed Most Wanted Dirty\scripts"  /y</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -98,7 +99,8 @@ copy "$(TargetDir)*.pdb" "G:\Oyunlar\Need for Speed Most Wanted Dirty\scripts"  
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(TargetDir)*.asi" "G:\Oyunlar\Need for Speed Most Wanted Dirty\scripts"  /y</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -140,6 +142,7 @@ copy "$(TargetDir)*.pdb" "G:\Oyunlar\Need for Speed Most Wanted Dirty\scripts"  
     <ClInclude Include="InGameTypes.h" />
     <ClInclude Include="MemcardCallbacks.h" />
     <ClInclude Include="MenuID.h" />
+    <ClInclude Include="PartLinker.h" />
     <ClInclude Include="Presitter.h" />
     <ClInclude Include="PursuitBoard.h" />
     <ClInclude Include="QuickRaceUnlocker.h" />
